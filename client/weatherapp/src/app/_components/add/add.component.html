@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"></mat-progress-bar>
+<div class="container">
+    <div class="nav">
+        <span class="title">
+            <h1>Location Management</h1>
+        </span>
+        <mat-card style="margin: 2em;" class="selector">
+            <form (ngSubmit)="onSubmit()" [formGroup]="locationAddForm">
+                <mat-form-field class="input">
+                    <mat-label>Latitude</mat-label>
+                    <input matInput formControlName="latitude">
+                </mat-form-field>
+                <mat-form-field class="input">
+                    <mat-label>Longitude</mat-label>
+                    <input matInput formControlName="longitude">
+                </mat-form-field>
+                <span>
+                    <button mat-raised-button color="accent">Search</button>
+                </span>
+            </form>
+        </mat-card>
+    </div>
+    
+    <div *ngIf="locationResponse" class="forecast-info-container">
+        <mat-card style="margin: 2em;" class="forecast-info-card">
+            <div class="card-content">
+                <div>
+                    <h1>{{locationResponse.name}}</h1>
+                    <h2>{{locationResponse.Weather}}</h2>
+                    <p>The temperature is currently {{locationResponse.Temp}} degrees F</p>
+                </div>
+                <img class="card-image" [src]="photoLink">
+            </div>
+            <button (click)="saveLocation()" hidden id="small-save" mat-raised-button color="accent">Save this location</button>
+        </mat-card>
+        <button (click)="saveLocation()" id="large-save" style="float: right; margin: 2em;" mat-raised-button color="accent">Save this location</button>
+    </div>
+    
+</div>

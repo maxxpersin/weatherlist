@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"></mat-progress-bar>
+<div class="container">
+    <div class="nav">
+        <mat-card style="margin: 2em;" class="selector">
+            <form [formGroup]="locationForm">
+                <mat-form-field>
+                    <mat-label>Locations</mat-label>
+                    <mat-select (selectionChange)="updateSelectedLocation()" formControlName="location">
+                        <mat-option *ngFor="let location of locations" [value]="location.id">
+                            {{ location.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+            <span>
+                <button [routerLink]="['/add']" mat-raised-button color="accent">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </span>
+        </mat-card>
+    </div>
+    <div class="card-container" *ngIf="selectedLocation">
+        <mat-card class="card" style="margin: 2em;">
+            <div class="card-content">
+                <h1>{{selectedLocation.name}}</h1>
+                <h2>{{selectedLocation.Weather}}</h2>
+                <p>The temperature is currently {{selectedLocation.Temp}} degrees F</p>
+            </div>
+            <img class="card-image" [src]="photoLink">
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+.container {
+    margin: auto;
+}
+
+.nav, .card-container {
+    width: 800px;
+    margin: 0 auto;
+    position: relative;
+    top: 5em;
+}
+
+.selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+}
+
+/* .card-container {
+    width: 800px;
+    margin: 0 auto;
+    position: 
+} */
+
+
+@media screen and (max-width: 815px) {
+    .nav, .card-container {
+        width: 500px;
+    }
+}

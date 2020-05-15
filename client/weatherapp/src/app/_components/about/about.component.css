@@ -1,0 +1,39 @@
+/* .card {
+    max-width: 400px;
+    width: 80%;
+    position: relative;
+    top: 0;
+}
+
+.container {
+    margin: auto;
+    width: 100%;
+    max-width: 900px;
+    margin-top: -5em;
+} */
+
+.container {
+    width: 800px;
+    margin: auto;
+    position: relative;
+    top: 6em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: auto;
+    width: 300px;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 400px;
+        flex-direction: column;
+        top: 4em;
+    }
+
+    .card {
+        margin: 2em;
+    }
+}

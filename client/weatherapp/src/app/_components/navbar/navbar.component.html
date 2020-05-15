@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <span [routerLink]="['/']" class="home">WeatherList</span>
+  <button mat-button *ngIf="validUser()" [routerLink]="['/']" class="nav-secondary">Home</button>
+  <button mat-button *ngIf="validUser()" [routerLink]="['/about']" class="nav-secondary">About</button>
+  <span class="spacer"></span>
+  <div class="profile-pic-container" *ngIf="validUser()">
+    <img [matMenuTriggerFor]="userMenu" class="profile-pic" *ngIf="validUser() && !profilePic"
+      src="../../../assets/profilepicture/default_pic.png">
+    <img [matMenuTriggerFor]="userMenu" class="profile-pic" *ngIf="validUser() && profilePic"
+      src="{{'data:image/png;base64,' + profilePic.image.data.toString()}}">
+  </div>
+  <mat-menu #userMenu="matMenu">
+    <button [routerLink]="['/profile']" mat-menu-item>Profile</button>
+    <button (click)="logout()" mat-menu-item>Logout</button>
+  </mat-menu>
+</mat-toolbar>

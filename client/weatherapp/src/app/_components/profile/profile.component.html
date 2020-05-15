@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<!-- <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"></mat-progress-bar> -->
+<div class="container">
+    <mat-grid-list cols="2">
+        <mat-grid-tile>
+            <div class="user-info">
+                <h1>{{user.firstName}} {{user.lastName}}</h1>
+                <h2>{{user.email}}</h2>
+                <button mat-flat-button color="accent" (click)="fileInput.click()">Change Photo</button>
+                <input type="file" hidden #fileInput (change)="fileSelected($event)">
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="profile-pic-container">
+                <img class="profile-pic" *ngIf="!profilePic"
+                    src="../../../assets/profilepicture/default_pic.png">
+                <img class="profile-pic" *ngIf="profilePic"
+                    src="{{'data:image/png;base64,' + profilePic.image.data.toString()}}">
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

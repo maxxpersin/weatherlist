@@ -1,0 +1,14 @@
+package com.persin.weatherlist;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+
+@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+public class WeatherlistApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(WeatherlistApplication.class, args);
+	}
+
+}

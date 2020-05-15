@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <mat-card>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
+            <form class="login-form" [formGroup]="loginForm">
+                <mat-form-field class="form-field">
+                    <input formControlName="username" matInput placeholder="Username">
+                </mat-form-field>
+                <mat-form-field class="form-field">
+                    <input formControlName="password" type="password" matInput placeholder="Password">
+                </mat-form-field>
+                <button mat-raised-button class="submit" (click)="ngSubmit()" type="submit">Submit</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <mat-chip-list>
+        <mat-chip class="error-chip" *ngIf="formInvalid">
+            Invalid login info
+        </mat-chip>
+    </mat-chip-list>
+</div>

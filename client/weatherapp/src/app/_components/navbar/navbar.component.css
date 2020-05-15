@@ -1,0 +1,48 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.home {
+  cursor: pointer;
+}
+
+.nav-secondary {
+  cursor: pointer;
+}
+
+.nav-secondary:nth-of-type(1) {
+  margin-left: 2em;
+}
+
+.profile-pic {
+  width: auto;
+  height: 100%;
+}
+
+.profile-pic-container {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow:hidden;
+  border-radius: 50%;
+  cursor: pointer;
+}
